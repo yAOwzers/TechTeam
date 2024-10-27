@@ -124,6 +124,14 @@ sqlite> .exit
 
 This portion of the code highlights several Sqlite limitations
 
+```bash
+# install dependencies
+go mod tidy
+
+# run application, ensure that the python application has already been ran first (so that the db is created)
+go run main.go
+```
+
 1. Concurrency Limitations - As the number of concurrent workers increase, we should observe:
 
    - Increased lock timeouts
