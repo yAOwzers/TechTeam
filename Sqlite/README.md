@@ -120,6 +120,25 @@ sqlite> SELECT * FROM dns_records;
 sqlite> .exit
 ```
 
+## Stress Testing
+
+This portion of the code highlights several Sqlite limitations
+
+1. Concurrency Limitations - As the number of concurrent workers increase, we should observe:
+
+   - Increased lock timeouts
+   - Increased failed operations
+   - Longer overall duration
+   - Decreased successful operation percentage
+
+2. Lock Contention - The high number of lock timeouts shows SQLite's limitation in handling multiple writers, even with WAL mode enabled.
+
+3. Performance Degradation - The duration increases non-linearly with the number of concurrent workers
+
+## Takeaway
+
+SQLite works well for light concurrent loads (like a single user's browser), but it might not be suitable for applications requiring high concurrency or heavy write loads.
+
 ## Troubleshooting
 
 If VirtualEnv fails
