@@ -31,7 +31,7 @@ Implements operation timeouts
 ## Dependencies
 
 - Python 3.10.10 (The version I was using at time of conception)
-- Go 1.19 or higher
+- Go go1.23.2 darwin/arm64 (The version I was using)
 - virtualenv
 
 ### Installing Dependencies
